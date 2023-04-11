@@ -114,10 +114,9 @@ RUN --mount=type=cache,target=/root/.cache \
 COPY . /home/web/code
 # it seems you should use only the file name without ".py"
 # "python -m test" instead of "python -m test.py
-ARG MY_APP=amazuto
-
 EXPOSE 8080
 
+RUN chmod +x start-dev-server.sh
 CMD ["start-dev-server.sh"]
 
 
