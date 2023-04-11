@@ -116,7 +116,10 @@ COPY . /home/web/code
 # "python -m test" instead of "python -m test.py
 EXPOSE 8080
 
-RUN chmod +x start-dev-server.sh
+# seems give permission to run a shell script is not mandatory. Try with the below if you get an error
+# RUN chmod +x start-dev-server.sh
+# should include "bash" in front of the shell script to avoid the error message
+# exec: "start-dev-server.sh": executable file not found in $PATH: unknown. 
 ENTRYPOINT ["bash", "start-dev-server.sh"]
 
 
