@@ -117,7 +117,7 @@ COPY . /home/web/code
 EXPOSE 8080
 
 RUN chmod +x start-dev-server.sh
-CMD ["start-dev-server.sh"]
+ENTRYPOINT ["start-dev-server.sh"]
 
 
 # Production mode
